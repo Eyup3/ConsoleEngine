@@ -29,14 +29,18 @@ namespace ConsoleEngine
 
                 Loop(elapsedTime);
 
+                GetFps();
+
                 endTime = DateTime.Now.Ticks;
                 elapsedTime = ((endTime - startTime) / 10000m) / 1000m;
             }
         }
 
+        #region FPS
+        protected int FPS; // the FPS calculated from the last measurement
+
         private DateTime _lastTime; // marks the beginning the measurement began
         private int _framesRendered; // an increasing count
-        protected int FPS; // the FPS calculated from the last measurement
         private void GetFps()
         {
             _framesRendered++;
@@ -45,14 +49,14 @@ namespace ConsoleEngine
             {
                 // one second has elapsed 
 
-                _fps = _framesRendered;
-                Console.Title = "FPS: " + _fps;
+                FPS = _framesRendered;
                 _framesRendered = 0;
                 _lastTime = DateTime.Now;
             }
 
         }
     }
+    #endregion
 
     public abstract partial class ConsoleEngine
     {
