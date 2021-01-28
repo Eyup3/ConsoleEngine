@@ -62,7 +62,7 @@ namespace ConsoleEngine
     {
         protected void DrawPoint(int x, int y, string input)
         {
-            Console.SetCursorPosition(x, y);
+            Console.SetCursorPosition(x * 2, y);
             Console.Write(input);
         }
         protected void DrawBox(int x, int y, int sizeX, int sizeY, char input)
