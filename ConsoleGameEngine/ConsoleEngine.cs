@@ -35,6 +35,7 @@ namespace ConsoleEngine
                 elapsedTime = ((endTime - startTime) / 10000m) / 1000m;
             }
         }
+
         #region FPS
         protected int FPS; // the FPS calculated from the last measurement
 
