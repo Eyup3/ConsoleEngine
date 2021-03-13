@@ -2,7 +2,7 @@
 
 namespace ConsoleEngine
 {
-    public abstract partial class ConsoleEngine
+    public abstract class ConsoleEngine
     {
 
         /// <summary>
@@ -35,7 +35,6 @@ namespace ConsoleEngine
                 elapsedTime = ((endTime - startTime) / 10000m) / 1000m;
             }
         }
-
         #region FPS
         protected int FPS; // the FPS calculated from the last measurement
 
@@ -55,11 +54,8 @@ namespace ConsoleEngine
             }
 
         }
-    }
-    #endregion
+        #endregion
 
-    public abstract partial class ConsoleEngine
-    {
         protected void DrawPoint(int x, int y, string input)
         {
             Console.SetCursorPosition(x * 2, y);
@@ -75,6 +71,7 @@ namespace ConsoleEngine
                 }
             }
         }
-    }
 
+    }
 }
+
